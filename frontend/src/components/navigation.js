@@ -1,4 +1,5 @@
-import { Navbar, Container, Nav } from 'react-bootstrap';
+import { Navbar, Container, Nav, NavLink } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
     return (
@@ -6,9 +7,9 @@ const Navigation = () => {
             <Container>
                 <Navbar.Brand href="/">ExerciseTracker</Navbar.Brand>
                 <Nav className="me-auto">
-                    <Nav.Link href="/">Exercises</Nav.Link>
-                    <Nav.Link href="/create">Create</Nav.Link>
-                    <Nav.Link href="/register">Register</Nav.Link>
+                    <Link to='/'>Exercises</Link>
+                    <Link to="/create">Create</Link>
+                    <Link to="/register">Register</Link>
                 </Nav>
             </Container>
         </Navbar>
