@@ -46,7 +46,7 @@ const EditExercise = () => {
             date: date
         }
         try{
-            const res = await axios.put(`http://localhost:5000/exercises/update/${id}`, exercise)
+            const res = await axios.put(`/exercises/update/${id}`, exercise)
             console.log(res.data)
         } catch (err){
             console.log(err)
@@ -55,7 +55,7 @@ const EditExercise = () => {
 
     const getUsers = async () => {
         try{
-            const res = await axios.get('http://localhost:5000/users')
+            const res = await axios.get('/users')
             const newUsers = res.data.map((user => user.username))
             setUsers(newUsers)
         } catch (err){
@@ -65,7 +65,7 @@ const EditExercise = () => {
 
     const getUser = async () => {
         try{
-            const res = await axios.get(`http://localhost:5000/exercises/${id}`)
+            const res = await axios.get(`/exercises/${id}`)
             const { username, description, duration, date } = res.data;
             setUsername(username)
             setDescription(description)

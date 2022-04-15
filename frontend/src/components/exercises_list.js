@@ -8,7 +8,7 @@ const ExercisesList = () => {
 
     const getExercises = async () => {
         try{
-            const res = await axios.get('http://localhost:5000/exercises')
+            const res = await axios.get('/exercises')
             setExercises(res.data)
         } catch (err){
             console.log(err)
@@ -19,7 +19,7 @@ const ExercisesList = () => {
         const index = e.target.parentNode.parentNode.childNodes[0].innerText
         const id = exercises[index]._id;
         try{
-            const res = await axios.delete(`http://localhost:5000/exercises/${id}`)
+            const res = await axios.delete(`/exercises/${id}`)
             console.log(res.data)
         } catch(err){
             console.log(err)

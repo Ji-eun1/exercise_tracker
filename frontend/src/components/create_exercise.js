@@ -53,7 +53,7 @@ const CreateExercise = () => {
             date: date
         }
         try{
-            const res = await axios.post('http://localhost:5000/exercises/add', exercise)
+            const res = await axios.post('/exercises/add', exercise)
             console.log(res.data)
         } catch (err){
             console.log(err)
@@ -62,7 +62,7 @@ const CreateExercise = () => {
 
     const getUsers = async () => {
         try{
-            const res = await axios.get('http://localhost:5000/users')
+            const res = await axios.get('/users')
             const newUsers = res.data.map((user => user.username))
             setUsers(newUsers)
             setUsername(newUsers[0])
